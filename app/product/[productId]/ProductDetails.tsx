@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/app/components/Button";
 import SetQuantity from "@/app/components/products/SetQuantity";
 import SetColor from "@/app/components/products/setColor";
 import { Rating } from "@mui/material";
@@ -69,7 +70,7 @@ const ProductDetails:React.FC<ProductDetailsProps> = ({ product}) => {
 });
   }, [cartProduct]);
 
-
+ 
   const handleQtyDecrease = useCallback(() =>{
     if (cartProduct.quantity === 1){
       return;
@@ -110,8 +111,11 @@ const ProductDetails:React.FC<ProductDetailsProps> = ({ product}) => {
       handleQtyDecrease={handleQtyDecrease}
       />
       <Horizontal/>
-      <div>add to cart</div>
-      
+      <div>
+        <Button
+        label="Add To Cart" onClick={() => {}}
+        />
+      </div>
     </div>
   </div> );
 }
