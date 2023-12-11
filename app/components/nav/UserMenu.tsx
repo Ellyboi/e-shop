@@ -56,22 +56,23 @@ const UserMenu:React.FC<UserMenuProps> = ({currentUser}) => {
         flex-col
         cursor-pointer
         ">
-          {currentUser ?  <div>
+          {currentUser ? (
+           <div>
             <Link href="/orders">
               <MenuItem onClick={toggleOpen}>
                 Your Orders
               </MenuItem>
             </Link>
             <Link href="/admin">
-              <MenuItem onClick={toggleOpen}>
-                Admin Dashboard
-              </MenuItem>
+              <MenuItem onClick={toggleOpen}>Admin Dashboard</MenuItem>
             </Link>
             <MenuItem onClick={() => {
               toggleOpen();
-              signOut()
+              signOut();
             }}>Logout</MenuItem>
-          </div> :  <div>
+          </div>
+           ) : (
+          <div>
           <Link href="/login">
               <MenuItem onClick={toggleOpen}>
                 login
@@ -83,9 +84,10 @@ const UserMenu:React.FC<UserMenuProps> = ({currentUser}) => {
               </MenuItem>
             </Link>
           </div>
+          )
           }
          
-        </div>
+        </div> 
       )}
     </div>
     {isOpen ? <BackDrop onClick={toggleOpen}/> : null}

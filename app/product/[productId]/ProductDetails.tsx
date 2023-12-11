@@ -3,12 +3,12 @@
 import Button from "@/app/components/Button";
 import ProductImage from "@/app/components/products/ProductImage";
 import SetQuantity from "@/app/components/products/SetQuantity";
-import SetColor from "@/app/components/products/SetColor";
 import { useCart } from "@/hooks/useCart";
 import { Rating } from "@mui/material";
 import { useCallback, useEffect, useState } from "react";
 import { MdCheckCircle } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import SetColor from "@/app/components/products/setColor";
 
 interface ProductDetailsProps {
   product: any
